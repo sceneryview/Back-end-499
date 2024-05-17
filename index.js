@@ -23,7 +23,11 @@ app.get("/", (req, res) => {
   res.send("สวัสดีจาก 6400833 รัตนากรณ์ การุณ");
 });
 
-
+app.use(cors({
+    origin:[ 'https://final-project-499.vercel.app/Adminpage', 'http://localhost:3000'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+  }));
 
 // app.get("/api",async (req, res) => {
 //   try {
