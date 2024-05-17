@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 });
 
 app.use(cors({
-    origin:[ 'https://final-project-499.vercel.app/Adminpage', 'http://localhost:3000'],
+    origin:[ 'https://final-project-499.vercel.app', 'http://localhost:3000'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
   }));
