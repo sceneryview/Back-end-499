@@ -40,7 +40,7 @@ const update = async (req, res) => {
         const id = req.params._id;
         const { main, text, link, avatar } = req.body;
         await sql` UPDATE version SET main = ${main}, text = ${text}, link = ${link}, avatar = ${avatar}
-        WHERE _id = ${id};
+        WHERE _id = ${_id};
         `;
         return res.status(200).json({ message: "Model updated successfully" });
         } catch (error) {
@@ -54,7 +54,7 @@ const remove = async (req, res) => {
         const id = req.params._id;
         await sql`
         DELETE FROM version
-        WHERE _id = ${id}
+        WHERE _id = ${_id}
       `;
         return res.status(200).json({ message: "Model Delete successfully" });
       } catch (error) {
