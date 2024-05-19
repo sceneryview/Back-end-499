@@ -39,7 +39,7 @@ const update = async (req, res) => {
     try {
         const id = req.params.id;
         const { main, text, link, avatar } = req.body;
-        await sql` UPDATE version SET main = ${img}, text = ${text}, link = ${link}, avatar = ${avatar}
+        await sql` UPDATE version SET main = ${main}, text = ${text}, link = ${link}, avatar = ${avatar}
         WHERE _id = ${id};
         `;
         return res.status(200).json({ message: "Model updated successfully" });
