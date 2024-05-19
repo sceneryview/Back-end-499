@@ -8,7 +8,11 @@ const allversionRouter = require("./Routes/routes")
 
 require('dotenv').config()
 // เปิดใช้งาน CORS
-app.use(cors());
+app.use(cors({
+    origin:[ 'https://final-project-499.vercel.app', 'http://localhost:3000'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+  }));
 
 // ใช้ body-parser เพื่อแปลงข้อมูล JSON
 app.use(bodyParser.json());
@@ -16,30 +20,12 @@ app.use(bodyParser.json());
 // ตั้งค่าการเชื่อมต่อฐานข้อมูล MySQL
 const pool = new Pool({
   connectionString: process.env.POSTGRES_URL,
-})
+});
 
 // เส้นทางหลัก
 app.get("/", (req, res) => {
   res.send("สวัสดีจาก 6400833 รัตนากรณ์ การุณ");
 });
-
-app.use(cors({
-    origin:[ 'https://final-project-499.vercel.app', 'http://localhost:3000'],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
-  }));
-
-// app.get("/api",async (req, res) => {
-//   try {
-//     const data = await sql`SELECT * FROM version;`;
-//     return data.rows;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// });
-
-
-
 
 app.use("/api",allversionRouter)
 
