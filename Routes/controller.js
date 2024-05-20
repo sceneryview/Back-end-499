@@ -27,7 +27,7 @@ const create = async (req, res) => {
 const list = async (req, res) => {
     const id = req.params._id;
   try {
-    const version = await sql`SELECT * FROM version WHERE _id = ${_id};`;
+    const version = await sql`SELECT * FROM version WHERE _id = ${id};`;
     return version.rows;
   } catch (error) {
     console.log(error);
@@ -40,7 +40,7 @@ const update = async (req, res) => {
         const id = req.params._id;
         const { main, text, link, avatar } = req.body;
         await sql` UPDATE version SET main = ${main}, text = ${text}, link = ${link}, avatar = ${avatar}
-        WHERE _id = ${_id};
+        WHERE _id = ${id};
         `;
         return res.status(200).json({ message: "Model updated successfully" });
         } catch (error) {
