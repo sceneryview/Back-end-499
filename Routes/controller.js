@@ -37,7 +37,7 @@ const list = async (req, res) => {
 
 const update = async (req, res) => {
     try {
-        const id = req.params._id;
+        const id = req.params.id;
         const { main, text, link, avatar } = req.body;
         await sql` UPDATE version SET main = ${main}, text = ${text}, link = ${link}, avatar = ${avatar}
         WHERE _id = ${id};
