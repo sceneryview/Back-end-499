@@ -54,7 +54,7 @@ const remove = async (req, res) => {
         const id = req.params._id;
         await sql`
         DELETE FROM version
-        WHERE _id = ${_id}
+        WHERE _id = ${id}
       `;
         return res.status(200).json({ message: "Model Delete successfully" });
       } catch (error) {
