@@ -25,7 +25,7 @@ const create = async (req, res) => {
   };
 
 const list = async (req, res) => {
-    const id = req.params._id;
+    const id = req.params.id;
   try {
     const version = await sql`SELECT * FROM version WHERE _id = ${id};`;
     return version.rows;
