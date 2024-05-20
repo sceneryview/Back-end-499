@@ -51,7 +51,7 @@ const update = async (req, res) => {
 
 const remove = async (req, res) => {
     try {
-        const id = req.params._id;
+        const id = req.params.id;
         await sql`
         DELETE FROM version
         WHERE _id = ${id}
