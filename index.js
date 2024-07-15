@@ -9,7 +9,7 @@ const allversionRouter = require("./Routes/routes")
 require('dotenv').config()
 // เปิดใช้งาน CORS
 app.use(cors({
-    origin:[ 'https://final-project-499.vercel.app','https://final-project-499-sceneryviews-projects.vercel.app/','http://localhost:5000'],
+    origin:[ 'https://final-project-499.vercel.app','https://final-project-499-sceneryviews-projects.vercel.app','http://localhost:5000'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
   }));
